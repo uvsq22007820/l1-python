@@ -71,7 +71,7 @@ def demandeTemps(jours, heures, minutes, secondes):
     minutes = int(input("Combien de minutes"))
     secondes = int(input("Combien de seconde"))
     if (secondes > 59 or minutes > 59 or heures > 23):
-      print("Entrée mal formée, ça n'est pas une date.")
+      print("Entrée mal formée, ce n'est pas une date.")
       return (0,0,0,0)
     return (jours, heures, minutes, secondes)
 
@@ -107,9 +107,25 @@ def tempsEnDate(année, jour, heure, minute, seconde):
 
 def afficheDate(date = -1):
     pass
-    
+
 temps = secondeEnTemps(1000000000)
 print(temps)
-afficheTemps(temps)
-afficheDate(tempsEnDate(temps))
-afficheDate()
+#afficheTemps(temps)
+#afficheDate(tempsEnDate(temps))
+#afficheDate()
+
+def bisextile(jour):
+    sec = jour * 86400
+    #afficheDate(tempsEnDate(sec))
+    an=année-1970
+    if an//4 !=0:
+        print("il n'y a aucune année bissextile")
+    else:
+        n=an//4
+        L=[]
+        for i in range(n):
+            L.append(1972+i*4)
+        return L
+
+bisextile(20000)
+
